@@ -9,12 +9,12 @@ _foobar:                                ;tells foobar entry point
         mov ebp, esp                    ;moves ebp register to esp register
         sub esp, 4                      ;subtracts esp register to 4 to make empty stacks
 
-        mov eax, DWORD[ebp+8]           ;this should have 20
+        mov eax, DWORD[ebp+8]           ;this should have 30
         mov ebx, DWORD[ebp+12]          ;this should have 10
-        add eax, ebx                    ;adds eax (20) to ebx (10), so that will equal to 30.
+        add eax, ebx                    ;adds eax (30) to ebx (10), so that will equal to 30.
 
-        mov ecx, DWORD[ebp+16]          ;this should have 30
-        add eax, ecx                    ;adds eax (30 (20 plus 10)) to ecx (30), so that will equal to 60.
+        mov ecx, DWORD[ebp+16]          ;this should have 20
+        add eax, ecx                    ;adds eax (40 (30 plus 10)) to ecx (20), so that will equal to 60.
 
         mov [result], eax               ;returns the overall result
         leave                           ;leave foobar
